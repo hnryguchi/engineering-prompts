@@ -1,43 +1,43 @@
 # Engineering Prompts
 
-A small library of reusable prompt templates for working with AI coding agents on real, production-bound software: audits, phased execution with approval gates, safe deploys, spec-driven builds, and domain-expert review agents.
+**Português** · [English](README.en.md)
 
-> Templates distilled from prompts I used while building production systems with AI coding agents (Claude Code).
+Biblioteca de modelos de prompt reutilizáveis para trabalhar com agentes de código (IA) em software que vai para produção: auditorias, execução em fases com pontos de aprovação, deploys seguros, desenvolvimento guiado por especificação e agentes revisores especialistas de domínio.
 
-The templates themselves are written in Brazilian Portuguese, the language I work in.
+> Modelos destilados de prompts que usei na construção de sistemas em produção com agentes de código (Claude Code).
 
-**Em português:** esta é uma biblioteca de modelos de prompt reutilizáveis para trabalhar com agentes de código em sistemas que vão para produção. Cada modelo traz quando usar, o texto com `{{placeholders}}`, por que funciona, um exemplo anonimizado e as armadilhas mais comuns. Todos os exemplos são genéricos; nenhum dado de cliente, pessoa ou infraestrutura real foi incluído.
+Cada modelo traz quando usar, o texto do prompt com `{{placeholders}}`, por que funciona, um exemplo anonimizado e as armadilhas mais comuns. Todos os exemplos são genéricos; nenhum dado real de cliente, pessoa ou infraestrutura foi incluído.
 
-## Index
+## Índice
 
-| # | Template | What it is for |
-|---|----------|----------------|
-| 01 | [Auditoria somente leitura](prompts/01-auditoria-somente-leitura.md) | Read-only audit of the current state before any change; ends in a plan awaiting approval |
-| 02 | [Execução em fases com autorização](prompts/02-execucao-em-fases-com-autorizacao.md) | Autonomous execution of routine, reversible work with explicit stop points (push, deploy, data, secrets, visibility) |
-| 03 | [Retomar de onde parou](prompts/03-retomar-de-onde-parou.md) | Resume an interrupted session without restarting or undoing correct work |
-| 04 | [Isolamento de projeto](prompts/04-isolamento-de-projeto.md) | Hard boundaries so the agent never reads or touches other projects, accounts or cloud resources |
-| 05 | [Checklist pré-deploy e migração](prompts/05-checklist-pre-deploy-e-migracao.md) | Narrow, verifiable production authorization, including a database migration |
-| 06 | [Especificação completa de produto](prompts/06-especificacao-completa-de-produto.md) | Spec-driven build of a new multi-component app, with privacy rules, priorities and acceptance script |
-| 07 | [Auditoria final de verificação](prompts/07-auditoria-final-de-verificacao.md) | Verification-only pass with a PASS/FAIL table; no new features |
-| 08 | [Automação de planilha](prompts/08-automacao-de-planilha.md) | Spreadsheet automation: analyse first, then header-based mapping with confidence scoring and safe refusal |
-| 09 | [Agente revisor especialista](prompts/09-agente-revisor-especialista.md) | System prompt: domain expert that confirms or discards deterministic findings, with source and reason |
-| 10 | [Agente redator que não envia](prompts/10-agente-redator-que-nao-envia.md) | System prompt: drafting agent that re-verifies, matches the reviewer's style and only produces drafts |
-| 11 | [AGENTS.md do repositório](prompts/11-agents-md-do-repositorio.md) | Durable repository rules: architecture, commands, deploy, security, "never without authorization" |
-| 12 | [Dados honestos e estado vazio](prompts/12-dados-honestos-e-estado-vazio.md) | Snippet: never invent data or business rules; zero vs. missing vs. unavailable; DEMO isolation |
-| 13 | [Reproduzir, corrigir, validar](prompts/13-correcao-reproduzir-corrigir-validar.md) | Bug fix that requires reproduction, root cause, no cosmetic masking, and browser evidence |
+| # | Modelo | Finalidade |
+|---|--------|------------|
+| 01 | [Auditoria somente leitura](prompts/01-auditoria-somente-leitura.md) | Auditoria somente leitura do estado atual antes de qualquer alteração; termina em um plano aguardando aprovação |
+| 02 | [Execução em fases com autorização](prompts/02-execucao-em-fases-com-autorizacao.md) | Execução autônoma de trabalho rotineiro e reversível, com pontos de parada explícitos (push, deploy, dados, segredos, visibilidade) |
+| 03 | [Retomar de onde parou](prompts/03-retomar-de-onde-parou.md) | Retomada de uma sessão interrompida sem recomeçar nem desfazer trabalho correto |
+| 04 | [Isolamento de projeto](prompts/04-isolamento-de-projeto.md) | Fronteiras rígidas para que o agente nunca leia nem altere outros projetos, contas ou recursos de nuvem |
+| 05 | [Checklist pré-deploy e migração](prompts/05-checklist-pre-deploy-e-migracao.md) | Autorização de produção estreita e verificável, incluindo migration de banco de dados |
+| 06 | [Especificação completa de produto](prompts/06-especificacao-completa-de-produto.md) | Construção guiada por especificação de um app novo com vários componentes, com regras de privacidade, prioridades e roteiro de aceitação |
+| 07 | [Auditoria final de verificação](prompts/07-auditoria-final-de-verificacao.md) | Passada somente de verificação, com tabela PASS/FAIL; sem novas funcionalidades |
+| 08 | [Automação de planilha](prompts/08-automacao-de-planilha.md) | Automação de planilhas: primeiro a análise, depois mapeamento por cabeçalho com score de confiança e recusa segura |
+| 09 | [Agente revisor especialista](prompts/09-agente-revisor-especialista.md) | System prompt: especialista de domínio que confirma ou descarta achados determinísticos, com fonte e justificativa |
+| 10 | [Agente redator que não envia](prompts/10-agente-redator-que-nao-envia.md) | System prompt: agente redator que verifica de novo, segue o estilo de quem revisa e só produz rascunhos |
+| 11 | [AGENTS.md do repositório](prompts/11-agents-md-do-repositorio.md) | Regras duradouras do repositório: arquitetura, comandos, deploy, segurança, "nunca sem autorização" |
+| 12 | [Dados honestos e estado vazio](prompts/12-dados-honestos-e-estado-vazio.md) | Trecho reutilizável: nunca inventar dados nem regras de negócio; zero vs. ausente vs. indisponível; isolamento de DEMO |
+| 13 | [Reproduzir, corrigir, validar](prompts/13-correcao-reproduzir-corrigir-validar.md) | Correção de defeito com reprodução obrigatória, causa raiz, sem mascaramento cosmético e com evidência no navegador |
 
-## Principles
+## Princípios
 
-1. **Read before write.** Every non-trivial task starts with a read-only pass. The agent must state what it verified and what it did not.
-2. **Phases with approval gates.** Routine, reversible work runs autonomously; anything irreversible, costly or publicly visible (push, deploy, production data, secrets, DNS, making something public) stops for a human decision.
-3. **Deterministic first, LLM as second opinion, human approves.** Rule engines give reproducible coverage; the model adds judgement and must cite its sources; a person makes the final call and does the sending.
-4. **Never invent data.** An honest empty state beats plausible fabricated content. Missing business rules become documented open questions, not silent assumptions.
-5. **Never expose secrets.** Secrets live in the environment's configuration, never in versioned files, logs, commits or deploy packages. Public endpoints use explicit field allowlists.
+1. **Ler antes de escrever.** Toda tarefa não trivial começa com uma passada somente leitura. O agente deve declarar o que verificou e o que não verificou.
+2. **Fases com pontos de aprovação.** Trabalho rotineiro e reversível roda de forma autônoma; qualquer ação irreversível, custosa ou publicamente visível (push, deploy, dados de produção, segredos, DNS, tornar algo público) para e aguarda decisão humana.
+3. **Determinístico primeiro, LLM como segunda opinião, humano aprova.** Motores de regras dão cobertura reprodutível; o modelo acrescenta julgamento e precisa citar suas fontes; uma pessoa toma a decisão final e faz o envio (human-in-the-loop).
+4. **Nunca inventar dados.** Um estado vazio honesto é melhor que conteúdo fabricado plausível. Regras de negócio ausentes viram perguntas em aberto documentadas, não suposições silenciosas.
+5. **Nunca expor segredos.** Segredos ficam na configuração do ambiente, nunca em arquivos versionados, logs, commits ou pacotes de deploy. Endpoints públicos usam allowlists explícitas de campos.
 
-## How to use
+## Como usar
 
-Copy the fenced block of a template, replace the `{{placeholders}}`, and delete optional lines that do not apply. Templates 09–11 are meant to live as files (agent system prompts or repository instruction files); the others are pasted as task prompts. Template 12 is a snippet designed to be appended to any of the others.
+Copie o bloco de código de um modelo, substitua os `{{placeholders}}` e apague as linhas opcionais que não se aplicam. Os modelos 09 a 11 foram feitos para viver como arquivos (system prompts de agentes ou arquivos de instruções do repositório); os demais são colados como prompts de tarefa. O modelo 12 é um trecho pensado para ser anexado a qualquer um dos outros.
 
-## License
+## Licença
 
 [MIT](LICENSE) © 2026 Henry Noguchi
