@@ -40,4 +40,4 @@ Copie o bloco de código de um modelo, substitua os `{{placeholders}}` e apague 
 
 ## Licença
 
-[MIT](LICENSE) © 2026 Henry Noguchi
+© 2026 Henry Noguchi. Todos os direitos reservados. Ver [LICENSE](LICENSE).

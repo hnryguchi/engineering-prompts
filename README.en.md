@@ -40,4 +40,4 @@ Copy the fenced block of a template, replace the `{{placeholders}}`, and delete 
 
 ## License
 
-[MIT](LICENSE) © 2026 Henry Noguchi
+© 2026 Henry Noguchi. All rights reserved. See [LICENSE](LICENSE).
